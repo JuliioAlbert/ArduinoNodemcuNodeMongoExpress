@@ -40,7 +40,7 @@ app.post('/:id',  (req, res) => {
       
         pila.carga=body.carga;
 
-        pila.update((err, pila)=>{
+        pila.save((err, pila)=>{
             if (err) {
                 return res.status(400).json({
                     ok: false,
