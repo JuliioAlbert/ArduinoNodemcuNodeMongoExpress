@@ -22,30 +22,9 @@ app.get('/', (req, res, next) => {
     
 });
 
-app.post('/',  (req, res) => {
-    var body = req.body;
 
-     let pila= new Pila({
-       carga: body.carga 
-    });
-    pila.save((err,pila) =>{
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                mensaje: 'Error',
-                errors: err
-            });
-        }
-        res.status(201).json({
-            ok: true,
-            pila
-        });
-    })
- 
 
-});
-
-app.put('/:id',  (req, res) => {
+app.post('/:id',  (req, res) => {
     var body = req.body;
     var id = req.params.id;
 
@@ -77,25 +56,6 @@ app.put('/:id',  (req, res) => {
         })
 
     });
-
-    
-   /*  let pila= new Pila({
-       carga: body.carga 
-    });
-    pila.save((err,pila) =>{
-        if (err) {
-            return res.status(500).json({
-                ok: false,
-                mensaje: 'Error',
-                errors: err
-            });
-        }
-        res.status(201).json({
-            ok: true,
-            pila
-        });
-    })
- */
 
 });
 
