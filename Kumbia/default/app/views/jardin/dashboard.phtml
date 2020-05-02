@@ -1,0 +1,51 @@
+<h1>Si Jala</h1>
+
+<style>
+    #jardin {
+        width: 350px;
+        height: 350px;
+        border: 3px solid #555;
+        background: #5ddb10;
+        background-image: url('https://plantamus.com/blog/wp-content/uploads/2017/12/grama-1024x682.jpg');
+    }
+
+    #intruso {
+        width: 25px;
+        height: 25px;
+        background-color: #d810db;
+        margin-left: 175px;
+        margin-top: 150px;
+        position: absolute;
+    }
+</style>
+<div id="jardin">
+
+    <div id="intruso">
+
+    </div>
+</div>
+<script type="text/javascript">
+    function get_data() {
+        //axios.get('/Kumbia/jardin/getxy/5e6724eb3d4da3a8c9690588')
+        axios.get('/Kumbia/jardin/getxy/5e6724eb3d4da3a8c9690588')
+            .then(function(response) {
+                // handle success
+                console.log(response.data);
+                y = response.data.y;
+                x = response.data.x;
+                document.getElementById("intruso").style.marginTop = y + "px";
+                document.getElementById("intruso").style.marginLeft = x + "px";
+                setTimeout(function() {
+                    get_data();
+                }, 3000);
+            })
+            .catch(function(error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function() {
+                // always executed
+            });
+    }
+    get_data();
+</script>

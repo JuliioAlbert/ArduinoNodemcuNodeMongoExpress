@@ -1,0 +1,26 @@
+<h1>Ultrasonico</h1>
+<div  class="progress">
+  <div  id="progreso" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 80%"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<script type="text/javascript">
+
+    function get_status() {
+        var url = '/Kumbia/ultrasonico/get_status/5e6c267ae0d4e6a18d4e36fa';
+         axios.get(url)
+            .then(function(response) {
+                console.log(response);
+                var progreso = document.getElementById("progreso");
+                var resp="width:"+response.data.progress+"%";
+                progreso.setAttribute("style", resp);
+                setTimeout(function() {
+                    get_status();
+                }, 300);
+            })
+    }
+    get_status();
+    
+   
+
+  
+</script>

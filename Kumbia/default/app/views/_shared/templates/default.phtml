@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset=<?= APP_CHARSET ?>>
+  <title>DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php Tag::css('kumbia') ?>
+  <?= Html::includeCss() ?>
+  <link href="/Kumbia/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link href="/Kumbia/libs2/css/style.css" rel="stylesheet">
+  <!-- You can change the theme colors from here -->
+  <link href="/Kumbia/libs2/css/colors/default-dark.css" id="theme" rel="stylesheet">
+
+
+  <script type="text/javascript" src="http://localhost/Kumbia/libs/axios.js"></script>
+
+
+
+
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+  <div id="main-wrapper">
+
+    <?php View::partial('kumbia/header') ?>
+    <?php View::partial('kumbia/anside') ?>
+    <div class="page-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <?php View::content() ?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php View::partial('kumbia/footer') ?>
+      </div>
+
+    </div>
+  </div>
+  <script src="/Kumbia/libs/jquery/jquery.min.js"></script>
+  <!-- Bootstrap tether Core JavaScript -->
+  <script src="/Kumbia/libs/bootstrap/js/popper.min.js"></script>
+  <script src="/Kumbia/libs/bootstrap/js/bootstrap.min.js"></script>
+  <!-- slimscrollbar scrollbar JavaScript -->
+  <script src="/Kumbia/libs2/js/perfect-scrollbar.jquery.min.js"></script>
+  <!--Wave Effects -->
+  <script src="/Kumbia/libs2/js/waves.js"></script>
+  <!--Menu sidebar -->
+  <script src="/Kumbia/libs2/js/sidebarmenu.js"></script>
+  <!--stickey kit -->
+  <script src="/Kumbia/libs/sticky-kit-master/dist/sticky-kit.min.js"></script>
+  <script src="/Kumbia/libs/sparkline/jquery.sparkline.min.js"></script>
+  <!--Custom JavaScript -->
+  <script src="/Kumbia/libs2/js/custom.min.js"></script>
+  <!-- ============================================================== -->
+  <!-- Style switcher -->
+  <!-- ============================================================== -->
+  <script src="/Kumbia/libs/styleswitcher/jQuery.style.switcher.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

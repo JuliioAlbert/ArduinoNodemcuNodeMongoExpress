@@ -1,0 +1,109 @@
+
+<style>
+#casa{
+    width: 557px;
+    height: 448px;
+    background-image: url("/Kumbia/img/casa/casa.jpg");
+}
+
+#foco{
+    width: 25px;
+    height: 25px;
+    margin-top: 175px;
+    margin-left: 175px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#puerta{
+    width: 50px;
+    height: 50px;
+    margin-top: 91px;
+    margin-left: 296px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#foco2{
+    width: 25px;
+    height: 25px;
+    margin-top: 266px;
+    margin-left: 114px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.foco_0{
+    background-image: url("/Kumbia/img/casa/foco_1.jpeg");
+}
+.foco_1{
+    background-image: url("/Kumbia/img/casa/foco_0.jpeg");
+}
+.puerta_0{
+    background-image: url("/Kumbia/img/casa/puerta_0.jpg");
+}
+.puerta_1{
+    background-image: url("/Kumbia/img/casa/puerta_1.jpg");
+}
+
+
+
+</style>
+
+
+<div id="casa">
+    <div id="foco" class="foco_0"></div>
+
+    <div id="foco2" class="foco_0"></div>
+    
+    <div id="foco3" class="foco_0"></div>
+    
+    <div id="foco4" class="foco_0"></div>
+    
+    <div id="puerta" class="puerta_0"></div>
+    
+    <div id="puerta2" class="puerta_0"></div>
+
+</div>
+
+<img id="foco">
+
+
+
+<script type="text/javascript">
+
+    function get_status() {
+        var url = '/Kumbia/casa/get_status/5e6981a88e43d341e18a8cba';
+         axios.get(url)
+            .then(function(response) {
+                console.log(response);
+                var foco = document.getElementById("foco");
+                var imagen="foco_"+response.data.status;
+                foco.setAttribute("class", imagen);
+                setTimeout(function() {
+                    get_status();
+                }, 300);
+            })
+    }
+    function get_statusP() {
+        var url = '/Kumbia/casa/get_statusP/5e6981a88e43d341e18a8cba';
+         axios.get(url)
+            .then(function(response) {
+                console.log(response);
+                var puerta = document.getElementById("puerta");
+                var imagen="puerta_"+response.data.status;
+                puerta.setAttribute("class", imagen);
+                setTimeout(function() {
+                    get_statusP();
+                }, 200);
+            })
+    }
+    get_statusP();
+    get_status();
+    
+   
+
+  
+</script>
